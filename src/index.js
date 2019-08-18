@@ -15,7 +15,7 @@ function login(data = {}) {
 
 function getProfile() {
   if (!document.cookie.length) return null;
-  
+
   try {
     return JSON.parse(document.cookie.replace('profile=', '')); 
   } catch(error) {
@@ -127,10 +127,6 @@ function renderLoginPage() {
   form.appendChild(btnLogIn);
   
   document.body.appendChild(loginPage);
-  
-  function inputListener(inputVariable) {
-    form.classList.add('formError');
-  }
 
   function emailListener(event) {
     if (hasLoginError) {
@@ -139,7 +135,6 @@ function renderLoginPage() {
     }
 
     emailValue = event.target.value;
-    inputListener(emailValue);
   }
 
   email.addEventListener('change', emailListener);
@@ -151,7 +146,6 @@ function renderLoginPage() {
     }
 
     passwordValue = event.target.value;
-    inputListener(passwordValue);
   }
 
   password.addEventListener('change', passwordListener);
