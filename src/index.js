@@ -3,7 +3,7 @@ import './styles.css';
 
 const METHOD = 'POST';
 const API_URL = 'https://us-central1-mercdev-academy.cloudfunctions.net/login';
-const HEADERS = new Headers({ 'loginPage-Type': 'applicaiton/json' });
+const HEADERS = new Headers({ 'Content-Type': 'application/json' });
 
 function login(data = {}) {
   return fetch(API_URL, {
@@ -17,18 +17,18 @@ function getProfile() {
   if (!document.cookie.length) return null;
 
   try {
-    return JSON.parse(document.cookie.replace('profile=', '')); 
+    return JSON.parse(document.cookie.replace('profile=', '').replace(';', '')); 
   } catch(error) {
     return null;
   }
 }
 
 function setProfile(name, profile) {
-  if(name && profile) document.cookie = `${name}=${profile}`;
+  if (name && profile) document.cookie = `${name}=${profile}`;
 }
 
 function removeProfile() {
-  document.cookie = '';
+  document.cookie = 'profile=null';
 }
 
 const DEFAULT_INPUT_VALUE = '';
@@ -47,6 +47,7 @@ function renderProfilePage(profile) {
   profilePage.appendChild(logo);
 
   const form = document.createElement('form');
+
   form.classList.add('form');
   profilePage.appendChild(form);
 
@@ -67,9 +68,12 @@ function renderProfilePage(profile) {
   name.innerHTML = profile.name;
   photo.style.backgroundImage = `url(${profile.photoUrl})`;
   
-  function onClickLogout() {
+  function onClickLogout(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
     removeProfile();
-    renderLoginPage();
+    window.location.reload();
     btnLogOut.removeEventListener('click', onClickLogout);
   }
   
@@ -159,25 +163,29 @@ function renderLoginPage() {
         password: passwordValue
       })
       .then(data => {
+        if (data.error) {
+          console.error(data.error);
+          
+          document.querySelector('.error').style.display = 'block';
+
+          hasLoginError = true;
+          form.classList.add('formError');
+
+          return;
+        }
+        
         emailValue = DEFAULT_INPUT_VALUE;
         passwordValue = DEFAULT_INPUT_VALUE;
 
-        setProfile('login', JSON.stringify(data));
+        setProfile('profile', JSON.stringify(data));
 
         email.removeEventListener('change', emailListener);
         password.removeEventListener('change', passwordListener);
         form.removeEventListener('submit', onSubmit);
 
+        document.body.removeChild(loginPage)
         renderProfilePage(data);
       })
-      .catch(error => {
-        console.error(error);
-
-        document.querySelector('.error').style.display = 'block';
-
-        hasLoginError = true;
-        form.classList.add('formError');
-      });
   }
 
   form.addEventListener('submit', onSubmit);

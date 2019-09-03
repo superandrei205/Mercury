@@ -1,8 +1,23 @@
 @font-face {
-    font-family: 'gotham_regular';
-    src: url('./fonts/GothaProReg.otf');
-    src: url('./fonts/GothaProReg.woff') format('woff'),
-         url('./fonts/GothaProReg.ttf') format('truetype');
+    font-family: 'gotham_pro_black';
+    src: url('./fonts/GothamPro-Black.woff') format('woff'),
+         url('./fonts/GothamPro-Black.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+@font-face {
+    font-family: 'gotham_pro_bold';
+    src: url('./fonts/GothamPro-Bold.woff') format('woff'),
+         url('./fonts/GothamPro-Bold.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+@font-face {
+    font-family: 'gotham_pro_medium';
+    src: url('./fonts/GothamPro-Medium.woff') format('woff'),
+         url('./fonts/GothamPro-Medium.woff2') format('woff2');
         font-weight: normal;
         font-style: normal;
     }
@@ -18,7 +33,7 @@ body {
 }
 
 body {
-  font-family: 'gotham_regular';
+  font-family: 'gotham_pro_black';
   background-image: url('./images/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -32,6 +47,7 @@ body {
 }
 
 .logo {
+  font-family: 'gotham_pro_bold';
   display: inline-block;
   width: 220px;
   height: 52px;
@@ -43,7 +59,7 @@ body {
 .text {
   height: 29px;
   opacity: 0.8;
-  font-family: inherit;
+  font-family: 'gotham_pro_bold';
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -59,6 +75,7 @@ body {
 }
 
 .name {
+  font-family: 'gotham_pro_bold';
   font-size: 28px;
   margin: 40px 0 0;
 }
@@ -75,6 +92,7 @@ body {
 }
 
 .error {
+  font-family: 'gotham_pro_medium';
   width: 100%;
   border-radius: 4px;
   background-color: rgba(237, 65, 89, 0.25);
@@ -97,6 +115,7 @@ body {
 }
 
 .input {
+  font-family: 'gotham_pro_medium';
   width: 100%;
   padding-left: 20px;
   height: 48px;
@@ -127,6 +146,7 @@ body {
 }
 
 .button {
+  font-family: 'gotham_pro_medium';
   width: 146px;
   height: 48px;
   border-radius: 100px;
