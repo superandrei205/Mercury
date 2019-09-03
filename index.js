@@ -1,6 +1,3 @@
-import './reset.css';
-import './styles.css';
-
 const METHOD = 'POST';
 const API_URL = 'https://us-central1-mercdev-academy.cloudfunctions.net/login';
 const HEADERS = new Headers({ 'Content-Type': 'application/json' });

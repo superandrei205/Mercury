@@ -93,7 +93,7 @@ body {
 
 .error {
   font-family: 'gotham_pro_medium';
-  width: 100%;
+  width: 80%;
   border-radius: 4px;
   background-color: rgba(237, 65, 89, 0.25);
   font-size: 14px;
