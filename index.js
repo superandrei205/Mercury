@@ -37,7 +37,7 @@ function renderProfilePage(profile) {
   if (!profile) return;
   
   const profilePage = document.createElement('div');
-  profilePage.classList.add('content');
+  profilePage.classList.add('column');
 
   const logo = document.createElement('div');
   logo.classList.add('logo');
@@ -45,7 +45,7 @@ function renderProfilePage(profile) {
 
   const form = document.createElement('form');
 
-  form.classList.add('form');
+  form.classList.add('form', 'column');
   profilePage.appendChild(form);
 
   const photo = document.createElement('div');
@@ -81,7 +81,7 @@ function renderProfilePage(profile) {
 
 function renderLoginPage() {
   const loginPage = document.createElement('div');
-  loginPage.classList.add('content');
+  loginPage.classList.add('column');
 
   const logo = document.createElement('div');
   logo.classList.add('logo');
@@ -95,7 +95,7 @@ function renderLoginPage() {
   const errorText = document.createElement('span');
   const btnLogIn = document.createElement('button');
 
-  form.classList.add('form');
+  form.classList.add('form', 'column');
 
   logIn.classList.add('title', 'text');
   logIn.innerHTML = "Log in";
@@ -131,7 +131,7 @@ function renderLoginPage() {
 
   function emailListener(event) {
     if (hasLoginError) {
-      form.classList.remove('formError');
+      email.classList.remove('input__error');
       hasLoginError = false;
     }
 
@@ -140,9 +140,9 @@ function renderLoginPage() {
 
   email.addEventListener('change', emailListener);
 
-  function passwordListener (event) {
+  function passwordListener(event) {
     if (hasLoginError) {
-      form.classList.remove('formError');
+      password.classList.remove('input__error');
       hasLoginError = false;
     }
 
@@ -166,7 +166,8 @@ function renderLoginPage() {
           document.querySelector('.error').style.display = 'block';
 
           hasLoginError = true;
-          form.classList.add('formError');
+          email.classList.add('input__error');
+          password.classList.add('input__error');
 
           return;
         }

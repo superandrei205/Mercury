@@ -33,73 +33,27 @@ body {
 }
 
 body {
-  font-family: 'gotham_pro_black';
   background-image: url('./images/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
+  font-family: 'gotham_pro_black';
 }
 
-.content {
+.column {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .logo {
-  font-family: 'gotham_pro_bold';
-  display: inline-block;
   width: 220px;
   height: 52px;
+  margin: 141px auto 125px;
+
   background-image: url('./images/mercury-development.svg');
   background-repeat: no-repeat;
-  margin: 141px auto 125px;
-}
-
-.text {
-  height: 29px;
-  opacity: 0.8;
-  font-family: 'gotham_pro_bold';
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 0.2px;
-  color: #262626;
-  
-}
-
-.title {
-  font-size: 24px;
-  margin: 0;
-}
-
-.name {
-  font-family: 'gotham_pro_bold';
-  font-size: 24px;
-  margin: 40px 0 0;
-}
-
-.photo {
-  width: 128px;
-  height: 128px;
-  border: solid 1px #979797;
-  border-radius: 64px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-}
-
-.error {
-  font-family: 'gotham_pro_medium';
-  width: 80%;
-  border-radius: 4px;
-  background-color: rgba(237, 65, 89, 0.25);
-  font-size: 14px;
-  color: #ed4159;
-  display: none;
-  margin-top: 32px;
-  padding: 11px 110px 9px 16px;
 }
 
 .form {
@@ -107,33 +61,55 @@ body {
   margin-bottom: 335px;
   width: 27%;
   border-radius: 8px;
+
   box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.15);
   background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.text {
+  height: 29px;
+
+  color: #262626;
+
+  font-family: 'gotham_pro_bold';
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  
+  opacity: 0.8;
+}
+
+.title {
+  margin: 0;
+
+  font-size: 24px;
 }
 
 .input {
-  font-family: 'gotham_pro_medium';
   width: 100%;
   padding-left: 20px;
   height: 48px;
   border-radius: 4px;
+
   background-color: #f1f1f1;
-  font-size: 16px;
   border: solid 1px rgba(151, 151, 151, 0.25);
+
+  font-family: 'gotham_pro_medium';
+  font-size: 16px;
 }
 
 .input:hover {
   outline: none;
+
   color: #262626;
   border: solid 1px rgba(151, 151, 151, 0.25);
 }
 
-
-.formError > input {
+.input__error {
   border: solid 1px #ed4159;
+
   color: #ed4159;
 } 
 
@@ -145,26 +121,63 @@ body {
   margin-top: 32px;
 }
 
-.button {
+.photo {
+  width: 128px;
+  height: 128px;
+  border: solid 1px #979797;
+  border-radius: 64px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.name {
+  margin: 40px 0 0;
+
+  font-family: 'gotham_pro_bold';
+  font-size: 24px;
+}
+
+.error {
+  display: none;
+  margin-top: 32px;
+  padding: 11px 110px 9px 16px;
+  width: 100%;
+  border-radius: 4px;
+
+  color: #ed4159;
+  background-color: rgba(237, 65, 89, 0.25);
+
   font-family: 'gotham_pro_medium';
+  font-size: 14px;
+}
+
+.button {
   width: 146px;
   height: 48px;
+  margin: 48px 0 0 0;
   border-radius: 100px;
+
   box-shadow: 0 4px 16px 0 rgba(237, 65, 89, 0.4);
   background-color: #ed4159;
+
+  font-family: 'gotham_pro_medium';
   font-size: 14px;
   color: #ffffff;
-  margin: 48px 0 0 0;
+  
   outline: none;
 }
 
 .button:hover {
+  border: 3px solid #fff; 
+
   background-color: #fff;
   color: #ed4159;
   border-color: #fff;
-  font-size: 14px;
-  border: 3px solid #fff; 
   box-shadow: 0 6px 20px 0 rgba(237, 65, 89, 0.4);
+
+  font-size: 14px;
 }
 
 .button:active {
@@ -202,10 +215,6 @@ body {
     margin-top: 24px;
   }
 
-  .button {
-    margin: 40px 0 0 0;
-  }
-
   .name {
     margin: 24px 0 0;
     font-size: 18px;
@@ -214,5 +223,9 @@ body {
   .photo {
     width: 86px;
     height: 86px;
+  }
+
+  .button {
+    margin: 40px 0 0 0;
   }
 }
