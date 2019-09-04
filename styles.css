@@ -53,7 +53,7 @@ body {
   height: 52px;
   background-image: url('./images/mercury-development.svg');
   background-repeat: no-repeat;
-  margin: 142px auto;
+  margin: 141px auto 125px;
 }
 
 .text {
@@ -76,14 +76,13 @@ body {
 
 .name {
   font-family: 'gotham_pro_bold';
-  font-size: 28px;
+  font-size: 24px;
   margin: 40px 0 0;
 }
 
 .photo {
   width: 128px;
   height: 128px;
-  margin-top: 48px;
   border: solid 1px #979797;
   border-radius: 64px;
   background-repeat: no-repeat;
@@ -105,7 +104,8 @@ body {
 
 .form {
   padding: 48px 48px 60px;
-  width: 35%;
+  margin-bottom: 335px;
+  width: 27%;
   border-radius: 8px;
   box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.15);
   background-color: #ffffff;
@@ -173,6 +173,7 @@ body {
 
 @media screen and (max-width: 1280px) {
   .form {
+    margin-bottom: 200px;
     padding: 40px 32px 56px;
     width: 50%;
   }
@@ -184,11 +185,34 @@ body {
 
 @media screen and (max-width: 720px) {
  .form {
+    margin-bottom: 107px;
     padding: 32px 24px 48px;
     width: 80%;
   }
 
   .logo {
-    margin: 43px auto;
+    margin: 43px auto 37px;
+  }
+
+  .email {
+    margin-top: 32px;
+  }
+
+  .password {
+    margin-top: 24px;
+  }
+
+  .button {
+    margin: 40px 0 0 0;
+  }
+
+  .name {
+    margin: 24px 0 0;
+    font-size: 18px;
+  }
+
+  .photo {
+    width: 86px;
+    height: 86px;
   }
 }
